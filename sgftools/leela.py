@@ -185,7 +185,7 @@ class CLI(object):
         if self.verbosity > 0:
             print >>sys.stderr, "Starting leela..."
 
-        p = Popen([self.executable, '--gtp', '--noponder'] + xargs, stdout=PIPE, stdin=PIPE, stderr=PIPE)
+        p = Popen([self.executable, '--gtp', '--noponder', '-w a53cd929d2b3f2c939d41757291aa70b6992a215d31e386051beb7afecaa2113.gz'] + xargs, stdout=PIPE, stdin=PIPE, stderr=PIPE)
         self.p = p
         self.stdout_thread = start_reader_thread(p.stdout)
         self.stderr_thread = start_reader_thread(p.stderr)
